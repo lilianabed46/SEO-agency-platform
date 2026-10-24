@@ -1,0 +1,138 @@
+/* RTL-safe by construction: every offset below is logical (inline/block), never
+   left/right, so this flips correctly under dir="rtl" with no separate rules.
+
+   The main loop nav's labels are authored as "1 · Data", "2 · Analysis", … (see
+   tabs.ts) — ::first-letter targets just the leading digit so it can be styled
+   as a stepper "badge" purely in CSS, with no markup changes. */
+
+.loop-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  border-block-end: 1px solid var(--color-border);
+  margin-block-end: 20px;
+  padding-block-end: 4px;
+}
+
+.loop-tabs--compact {
+  gap: 2px;
+  margin-block-end: 12px;
+  border-block-end: none;
+  padding-block-end: 0;
+}
+
+/* Vertical variant — the same tabs rendered as a stacked sidebar nav (see
+   WebsiteDetailPage's "filter buttons on the left" layout). */
+.loop-tabs--vertical {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 4px;
+  border-block-end: none;
+  margin-block-end: 0;
+  padding-block-end: 0;
+}
+
+.loop-tab {
+  position: relative;
+  padding-block: 6px;
+  padding-inline: 2px;
+  border: none;
+  border-block-end: 2px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.12s ease;
+}
+
+/* The stepper connector line, drawn behind each tab (except the last) and
+   reaching across the gap to the next one. Horizontal layout only. */
+.loop-tabs:not(.loop-tabs--compact):not(.loop-tabs--vertical) .loop-tab:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: calc(100% + 2px);
+  inset-block-start: 11px;
+  inline-size: 6px;
+  block-size: 2px;
+  background: var(--color-border-strong);
+}
+
+.loop-tabs--compact .loop-tab {
+  padding-block: 6px;
+  padding-inline: 10px;
+  font-size: 13px;
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-primary-light);
+  border-radius: 999px;
+}
+
+.loop-tab:hover {
+  color: var(--color-text);
+}
+
+.loop-tabs--compact .loop-tab:hover {
+  border-color: var(--color-primary);
+}
+
+.loop-tab--active {
+  color: var(--color-text);
+  border-block-end-color: transparent;
+  font-weight: 700;
+}
+
+.loop-tabs--compact .loop-tab--active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+/* Numbered "step" badge — the leading digit of "1 · Data" etc., styled as a
+   small circle via ::first-letter (no extra markup). */
+.loop-tabs:not(.loop-tabs--compact) .loop-tab::first-letter {
+  display: inline-block;
+  min-inline-size: 20px;
+  padding-block: 2px;
+  padding-inline: 1px;
+  margin-inline-end: 1px;
+  border-radius: 999px;
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  text-align: center;
+}
+
+.loop-tabs:not(.loop-tabs--compact) .loop-tab--active::first-letter {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* Vertical (sidebar) tab styling — full-width rows with a filled active state,
+   like a nav rail rather than an underlined tab strip. */
+.loop-tabs--vertical .loop-tab {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: start;
+}
+
+.loop-tabs--vertical .loop-tab:hover {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.loop-tabs--vertical .loop-tab--active {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(91, 82, 236, 0.35);
+}
+
+.loop-tabs--vertical .loop-tab--active::first-letter {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}

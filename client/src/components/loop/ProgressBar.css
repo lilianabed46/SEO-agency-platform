@@ -1,0 +1,29 @@
+/* Phase 4 (تجميلي — عمدًا آخر أولوية): plain CSS indeterminate progress bar, no
+   library. Uses inline-size (not width) so it's direction-agnostic under RTL. */
+
+.progress-bar-track {
+  block-size: 4px;
+  inline-size: 100%;
+  max-inline-size: 280px;
+  background: var(--color-primary-light);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-block: 6px;
+}
+
+.progress-bar-fill {
+  block-size: 100%;
+  inline-size: 40%;
+  background: var(--color-primary);
+  border-radius: 999px;
+  animation: progress-bar-slide 1.1s ease-in-out infinite;
+}
+
+@keyframes progress-bar-slide {
+  0% {
+    margin-inline-start: -40%;
+  }
+  100% {
+    margin-inline-start: 100%;
+  }
+}

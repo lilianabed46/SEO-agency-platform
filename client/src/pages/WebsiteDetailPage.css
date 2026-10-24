@@ -1,0 +1,260 @@
+/* Back link (same treatment as the client-profile page's back-link, duplicated
+   here so this page doesn't need to import ClientPage.css just for one rule). */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px 6px 8px;
+  margin-bottom: 16px;
+  border-radius: 999px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+
+.back-link:hover {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+/* Top white rectangle: the project's own info, always visible. */
+.website-info-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 22px 24px;
+  margin-bottom: 22px;
+}
+
+.website-info-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.website-info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  flex: none;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.website-info-card h1 {
+  font-size: 19px;
+  margin: 0 0 4px;
+  word-break: break-all;
+}
+
+.website-info-meta {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.website-info-right {
+  flex: none;
+}
+
+/* Below the info card: sidebar (filter buttons) + view space, side by side. */
+.website-detail-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.website-sidebar {
+  width: 230px;
+  flex: none;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 16px;
+  position: sticky;
+  top: 20px;
+}
+
+.website-view {
+  flex: 1;
+  min-width: 0;
+}
+
+/* The Data step's two cards. */
+.data-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.data-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+}
+
+.data-card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.data-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  flex: none;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.data-card-head h3 {
+  font-size: 16px;
+  margin: 0 0 2px;
+}
+
+.data-card-head p {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.data-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.data-row:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.data-row-wrap {
+  align-items: flex-start;
+}
+
+.data-row-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  flex: none;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.data-row-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.data-row-body strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.data-row-body span {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+.data-row-action {
+  flex: none;
+}
+
+.run-crawl-btn {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-block: 12px;
+}
+
+.history-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0 4px;
+}
+
+.history-head h4 {
+  font-size: 12px;
+  margin: 0;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 26px 10px;
+  color: var(--color-text-muted);
+}
+
+.empty-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.empty-state strong {
+  color: var(--color-text);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.empty-state span {
+  font-size: 13px;
+  max-width: 220px;
+}
+
+@media (max-width: 860px) {
+  .website-detail-body {
+    flex-direction: column;
+  }
+
+  .website-sidebar {
+    width: 100%;
+    position: static;
+  }
+
+  .data-grid {
+    grid-template-columns: 1fr;
+  }
+}

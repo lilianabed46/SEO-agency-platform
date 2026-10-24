@@ -1,0 +1,85 @@
+:root {
+  /* Indigo/navy palette — see LILIAN_TODAY.md colour pass. Colours only,
+     no markup changes: every existing element keeps its structure. */
+  --color-bg: #f4f5fc;
+  --color-surface: #ffffff;
+  --color-border: #e6e8f7;
+  --color-border-strong: #d7d9f2;
+
+  --color-text: #1e2233;
+  --color-text-muted: #6b7094;
+  --color-text-faint: #9497b8;
+
+  --color-primary: #5b52ec;
+  --color-primary-dark: #453ec9;
+  --color-primary-darker: #322a9e;
+  --color-primary-light: #edeeff;
+  --color-primary-light-strong: #dcdcff;
+
+  --color-header-start: #1a1f4b;
+  --color-header-end: #322a9e;
+
+  --color-success-bg: #e6f8ee;
+  --color-success-text: #1a7a3d;
+  --color-success-border: #b6ebc9;
+
+  --color-danger-bg: #fdeceb;
+  --color-danger-text: #b3261e;
+  --color-danger-border: #f6c9c4;
+
+  --color-warning-bg: #fff6e8;
+  --color-warning-text: #96590a;
+  --color-warning-border: #f6dfab;
+
+  --shadow-card: 0 2px 10px rgba(41, 39, 110, 0.06), 0 10px 30px rgba(41, 39, 110, 0.06);
+  --shadow-card-hover: 0 4px 16px rgba(41, 39, 110, 0.1), 0 14px 36px rgba(41, 39, 110, 0.1);
+  --shadow-header: 0 2px 16px rgba(20, 18, 60, 0.18);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+}
+
+h1 {
+  font-size: 24px;
+  margin: 0 0 8px;
+  color: var(--color-text);
+}
+
+h2 {
+  font-size: 18px;
+  margin: 0 0 8px;
+  color: var(--color-text);
+}
+
+h3 {
+  font-size: 15px;
+  margin: 12px 0 8px;
+  color: var(--color-text);
+}
+
+p,
+label,
+span,
+li,
+a {
+  font-size: 14px;
+}
+
+a {
+  color: var(--color-primary);
+}

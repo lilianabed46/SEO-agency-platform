@@ -1,0 +1,309 @@
+/* X-1: isolates an LTR segment (URL, slug, rule code, email) inside RTL text so its
+   internal character order never flips — used via the <Ltr/> component. */
+.ltr-inline {
+  unicode-bidi: isolate;
+  direction: ltr;
+  display: inline-block;
+}
+
+.loop-shell {
+  margin-top: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  padding: 18px;
+}
+
+.loop-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.loop-tabs,
+.subtabs,
+.action-row,
+.content-review-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tab-button {
+  padding: 8px 12px;
+  border: 1px solid var(--color-border-strong);
+  background: var(--color-primary-light);
+  color: var(--color-text);
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+}
+
+.tab-button:hover {
+  border-color: var(--color-primary);
+}
+
+.tab-button.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.alert-badge {
+  background: var(--color-warning-bg);
+  color: var(--color-warning-text);
+  border: 1px solid var(--color-warning-border);
+  border-radius: 999px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.loop-section-group {
+  display: grid;
+  gap: 16px;
+}
+
+.loop-panel {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  padding: 16px;
+}
+
+.loop-panel-highlight {
+  border-style: dashed;
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+}
+
+.inline-block {
+  margin-top: 12px;
+}
+
+.mapping-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.review-card,
+.diagnosis-card,
+.content-review-panel {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  padding: 12px;
+}
+
+.content-review-panel {
+  background: var(--color-primary-light);
+}
+
+.content-panel-cell {
+  background: var(--color-bg);
+}
+
+.score-badge {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.intent-chip {
+  display: inline-block;
+  margin-inline-end: 8px;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.muted-text,
+.muted-label {
+  color: var(--color-text-muted);
+}
+
+.message {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.message.error {
+  color: var(--color-danger-text);
+}
+
+.message.warning {
+  color: var(--color-warning-text);
+}
+
+.demo-tag {
+  display: inline-block;
+  margin-inline-start: 8px;
+  font-size: 12px;
+  color: var(--color-warning-text);
+  font-weight: 600;
+}
+
+button,
+input,
+select,
+textarea,
+a {
+  font: inherit;
+}
+
+button {
+  padding: 8px 14px;
+  border: 1px solid var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(91, 82, 236, 0.25);
+  transition: background-color 0.12s ease, border-color 0.12s ease, box-shadow 0.12s ease, transform 0.05s ease;
+}
+
+button:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  box-shadow: 0 4px 10px rgba(91, 82, 236, 0.32);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+input,
+select,
+textarea {
+  padding: 7px 10px;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-primary-light-strong);
+  outline-offset: 1px;
+  border-color: var(--color-primary);
+}
+
+textarea {
+  min-width: 100%;
+  resize: vertical;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+th,
+td {
+  text-align: start;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+  font-size: 14px;
+}
+
+th {
+  background: var(--color-primary-light);
+  color: var(--color-text);
+}
+
+pre {
+  white-space: pre-wrap;
+  font-family: inherit;
+  margin: 8px 0 0;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0;
+}
+
+h2 {
+  margin-bottom: 12px;
+}
+
+p {
+  margin: 8px 0;
+}
+
+ul {
+  margin: 8px 0;
+  padding-inline-start: 18px;
+}
+
+/* Bare <section> elements are used as the content blocks on the website detail
+   page's Data tab (Google connection / GSC-GA4 / Search Console / Site crawl) —
+   styling the element itself turns each into a card without touching the JSX. */
+section {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 18px 20px;
+  margin-block-end: 16px;
+}
+
+section > h3:first-child,
+section > h4:first-child {
+  margin-top: 0;
+}
+
+@media (max-width: 720px) {
+  .loop-shell {
+    padding: 12px;
+  }
+
+  .loop-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .loop-tabs,
+  .subtabs,
+  .action-row,
+  .content-review-actions {
+    width: 100%;
+  }
+
+  .tab-button,
+  .alert-badge,
+  .action-row button,
+  .content-review-actions button {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}

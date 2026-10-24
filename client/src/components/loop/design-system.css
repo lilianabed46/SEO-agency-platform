@@ -1,0 +1,52 @@
+/* Phase 3 (LILIAN_TODAY.md, المرحلة ٣): one shared visual language for every
+   score/severity/intent/demo-data marker in the loop, instead of each section
+   re-inventing its own inline colours. Logical properties only — RTL-safe. */
+
+.score-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.score-badge-label {
+  font-weight: 400;
+  color: #666;
+  font-size: 0.85em;
+}
+
+.severity-chip {
+  display: inline-flex;
+  align-items: center;
+  padding-block: 1px;
+  padding-inline: 8px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.intent-badge {
+  display: inline-flex;
+  align-items: center;
+  padding-block: 1px;
+  padding-inline: 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  background: color-mix(in srgb, currentColor 12%, transparent);
+}
+
+.demo-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-inline-start: 8px;
+  padding-block: 0;
+  padding-inline: 6px;
+  border-radius: 3px;
+  border: 1px dashed var(--color-warning-text);
+  color: var(--color-warning-text);
+  font-size: 11px;
+  font-weight: 400;
+}
